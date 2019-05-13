@@ -13,6 +13,16 @@ squid_password=6021
 
 yum -y install squid httpd-tools
 
+cd /home/ck
+
+wget http://www.squid-cache.org/Versions/v4/squid-4.7.tar.gz
+tar -zxf squid-4.7.tar.gz
+cd squid-4.7
+
+./configure
+make
+make install
+
 htpasswd -b -c /etc/squid/passwd $squid_user $squid_password
 
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
