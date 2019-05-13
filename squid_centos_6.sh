@@ -15,7 +15,7 @@ yum -y install httpd-tools
 
 cd /home/ck
 
-wget http://www.squid-cache.org/Versions/v3/squid-3.5.2.tar.gz
+wget http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.2.tar.gz
 tar -zxf squid-3.5.2.tar.gz
 cd squid-3.5.2
 
