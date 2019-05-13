@@ -11,17 +11,9 @@
 squid_user=ck
 squid_password=6021
 
-yum -y install httpd-tools
+yum -y install squid httpd-tools
 
 cd /home/ck
-
-wget http://www.squid-cache.org/Versions/v3/3.5/squid-3.5.2.tar.gz
-tar -zxf squid-3.5.2.tar.gz
-cd squid-3.5.2
-
-./configure
-make
-make install
 
 htpasswd -b -c /etc/squid/passwd $squid_user $squid_password
 
