@@ -8,8 +8,8 @@
 # Site: https://knaved.com
 # Version 0.1
 
-squid_user=
-squid_password=
+squid_user=ck
+squid_password=6021
 
 yum -y install squid httpd-tools
 
@@ -17,11 +17,10 @@ htpasswd -b -c /etc/squid/passwd $squid_user $squid_password
 
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 touch /etc/squid/blacklist.acl
-wget -O /etc/squid/squid.conf  https://raw.githubusercontent.com/khaledalhashem/squid/master/squid_centos.conf
+wget -O /etc/squid/squid.conf  https://raw.githubusercontent.com/ckldev/squid/master/squid_centos.conf
 
-iptables -I INPUT -p tcp --dport 3128 -j ACCEPT
-#/sbin/iptables-save
-/sbin/service iptables save
+firewall-cmd --zone=public --add-port=3128/tcp --permanent
+firewall-cmd --reload
 
 systemctl restart squid
 systemctl enable squid
