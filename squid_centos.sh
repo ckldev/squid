@@ -19,7 +19,7 @@ mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 touch /etc/squid/blacklist.acl
 wget -O /etc/squid/squid.conf  https://raw.githubusercontent.com/ckldev/squid/master/squid_centos.conf
 
-firewall-cmd --zone=public --add-port=3128/tcp --permanent
+firewall-cmd --zone=public --add-port=5055/tcp --permanent
 firewall-cmd --reload
 
 systemctl restart squid
