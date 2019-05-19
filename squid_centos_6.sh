@@ -27,7 +27,7 @@ iptables -I INPUT -p tcp --dport 5055 -j ACCEPT
 /sbin/service iptables save
 
 service squid restart
-service squid enable
+chkconfig squid on
 service squid status
 
 
