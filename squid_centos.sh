@@ -11,7 +11,7 @@
 squid_user=ck
 squid_password=6021
 
-yum -y install squid httpd-tools
+yum -y install squid httpd-tools wget
 
 htpasswd -b -c /etc/squid/passwd $squid_user $squid_password
 
