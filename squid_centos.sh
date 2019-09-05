@@ -22,6 +22,8 @@ wget --no-check-certificate --no-cache --no-cookies -O /etc/squid/squid.conf  ht
 firewall-cmd --zone=public --add-port=5055/tcp --permanent
 firewall-cmd --reload
 
+squid -k parse
+
 systemctl restart squid
 systemctl enable squid
 systemctl status squid
