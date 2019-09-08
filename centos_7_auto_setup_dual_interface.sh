@@ -28,7 +28,7 @@ http_port ${ETH0_IP//[$'\t\r\n']}:5056 name=5056
 acl port5056 myportname 5056
 http_access allow port5056
 tcp_outgoing_address ${ETH0_IP//[$'\t\r\n']} port5056
-http_port ${ETH1_IP//[$'\t\r\n']}:5057 name=5057
+http_port ${ETH0_IP//[$'\t\r\n']}:5057 name=5057
 acl port5057 myportname 5057
 http_access allow port5057
 tcp_outgoing_address ${ETH1_IP//[$'\t\r\n']} port5057
