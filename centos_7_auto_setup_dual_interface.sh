@@ -35,6 +35,8 @@ tcp_outgoing_address ${ETH1_IP//[$'\t\r\n']} port5057
 " >> /etc/squid/squid.conf
 
 firewall-cmd --zone=public --add-port=5055/tcp --permanent
+firewall-cmd --zone=public --add-port=5056/tcp --permanent
+firewall-cmd --zone=public --add-port=5057/tcp --permanent
 firewall-cmd --reload
 
 squid -k parse
